@@ -2660,7 +2660,7 @@ function copyServerName(){
 
 <div class="music-control" id="musicControl">
     <span class="music-label">DAYZ BADLANDS RADIO</span>
-    <button type="button" id="musicButton" onclick="toggleMusic()">🔊 MUZYKA OFF</button>
+    <button type="button" id="musicButton" onclick="toggleMusic()">🔊 MUZYKA ON</button>
     <input
         class="music-volume"
         id="musicVolume"
@@ -2683,7 +2683,7 @@ let musicPlaying = false;
 let firstInteractionHandler = null;
 
 function setMusicButtonState(){
-    musicButton.textContent = musicPlaying ? "🔊 MUZYKA ON" : "🔇 MUZYKA ON";
+    musicButton.textContent = musicPlaying ? "🔊 MUZYKA ON" : "🔇 MUZYKA OFF";
 }
 
 function tryStartMusic(){
