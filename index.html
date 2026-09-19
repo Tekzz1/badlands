@@ -1,194 +1,1086 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
 
 <meta charset="UTF-8">
-<title>DAYZ BADLANDS | Livonia • Chernarus • Sakhal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DAYZ BADLANDS | Livonia • Chernarus • Sakhal • Xbox</title>
+
+<meta name="description" content="DAYZ BADLANDS - społeczność DayZ, poradniki, aktualności, pomoc z serwerami, modami i skryptami oraz serwer Xbox BAD LANDS | 24H RAID | PVP | POL/PL.">
 
 <style>
 
+/* =========================================================
+   DAYZ BADLANDS
+   ========================================================= */
+
+:root{
+
+    --bg:#080a08;
+    --bg2:#10140f;
+    --panel:rgba(10,14,10,0.92);
+
+    --green:#b6ff00;
+    --green2:#79ff00;
+
+    --yellow:#ffea00;
+    --orange:#ff9d00;
+
+    --red:#ff3b3b;
+    --blue:#4ba3ff;
+    --discord:#5865F2;
+
+    --white:#ffffff;
+    --gray:#b8b8b8;
+
+}
+
+
+/* RESET */
+
 *{
-box-sizing:border-box;
-scroll-behavior:smooth;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+html{
+    scroll-padding-top:90px;
 }
 
 body{
 
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-color:white;
+    margin:0;
 
-background:
-linear-gradient(
-rgba(0,0,0,0.75),
-rgba(0,0,0,0.85)
-),
-url("images/background.jpg");
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
-background-size:cover;
-background-attachment:fixed;
+    color:white;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.78),
+        rgba(0,0,0,0.94)
+    ),
+    url("images/background.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    line-height:1.7;
 
 }
 
 
-/* BANER */
+/* =========================================================
+   OGÓLNE
+   ========================================================= */
+
+a{
+    color:inherit;
+}
+
+strong{
+    color:var(--green);
+}
+
+.highlight{
+    color:var(--green);
+    font-weight:900;
+}
+
+.yellow{
+    color:var(--yellow);
+    font-weight:900;
+}
+
+.red{
+    color:#ff5757;
+    font-weight:900;
+}
+
+.center{
+    text-align:center;
+}
+
+.small{
+    color:#aaa;
+    font-size:14px;
+}
+
+
+/* =========================================================
+   GÓRNY PASEK
+   ========================================================= */
+
+.top-alert{
+
+    background:
+    linear-gradient(
+        90deg,
+        #8b0000,
+        #d00000,
+        #8b0000
+    );
+
+    padding:10px 20px;
+
+    text-align:center;
+
+    font-weight:900;
+
+    letter-spacing:1px;
+
+    border-bottom:1px solid #ff5555;
+
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
 
 header{
 
-text-align:center;
+    min-height:610px;
+
+    position:relative;
+
+    text-align:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+    background:#000;
+
 }
+
 
 .banner{
 
-width:100%;
-height:350px;
-object-fit:cover;
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    opacity:0.52;
+
+}
+
+
+.header-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.20),
+        rgba(0,0,0,0.88)
+    );
+
+}
+
+
+.hero{
+
+    position:relative;
+    z-index:2;
+
+    max-width:1050px;
+
+    padding:50px 20px;
+
+}
+
+
+.logo-small{
+
+    color:var(--green);
+
+    font-weight:bold;
+
+    letter-spacing:5px;
+
+    margin-bottom:10px;
 
 }
 
 
 h1{
 
-font-size:55px;
-text-shadow:4px 4px 10px black;
-margin-top:-120px;
+    margin:0;
+
+    font-size:clamp(48px,8vw,95px);
+
+    line-height:1;
+
+    font-weight:1000;
+
+    text-shadow:
+    0 3px 0 #000,
+    0 0 18px #000,
+    0 0 30px rgba(182,255,0,0.25);
 
 }
 
 
-header p{
+.hero-subtitle{
 
-font-size:25px;
-font-weight:bold;
+    margin-top:20px;
+
+    font-size:clamp(18px,3vw,29px);
+
+    font-weight:900;
+
+    letter-spacing:3px;
 
 }
 
+
+.hero-description{
+
+    max-width:800px;
+
+    margin:20px auto;
+
+    color:#ddd;
+
+    font-size:18px;
+
+}
+
+
+.buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin-top:30px;
+
+}
+
+
+.btn{
+
+    display:inline-block;
+
+    padding:16px 30px;
+
+    border-radius:9px;
+
+    text-decoration:none;
+
+    font-weight:900;
+
+    transition:0.2s;
+
+    border:2px solid transparent;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+}
+
+
+.btn:hover{
+
+    transform:translateY(-3px);
+
+    filter:brightness(1.12);
+
+}
 
 
 .discord{
 
-display:inline-block;
-
-background:#5865F2;
-color:white;
-
-padding:15px 35px;
-margin:20px;
-
-border-radius:10px;
-
-text-decoration:none;
-font-weight:bold;
+    background:var(--discord);
 
 }
 
 
+.server-button{
 
-/* MENU */
+    background:var(--green);
+
+    color:#080808;
+
+}
+
+
+.news-button{
+
+    border-color:white;
+
+    background:rgba(0,0,0,0.50);
+
+}
+
+
+/* =========================================================
+   MENU
+   ========================================================= */
 
 nav{
 
-background:#050505;
-padding:20px;
-text-align:center;
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+    background:rgba(3,4,3,0.97);
+
+    padding:17px 15px;
+
+    text-align:center;
+
+    border-bottom:2px solid #1b1b1b;
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.5);
 
 }
 
 
 nav a{
 
-color:white;
-text-decoration:none;
+    display:inline-block;
 
-margin:15px;
-font-weight:bold;
+    color:white;
+
+    text-decoration:none;
+
+    margin:5px 13px;
+
+    font-size:14px;
+
+    font-weight:900;
+
+    letter-spacing:0.8px;
+
+    transition:0.2s;
 
 }
 
 
+nav a:hover{
 
-/* SEKCJE */
+    color:var(--green);
 
+}
+
+
+/* =========================================================
+   SEKCJE
+   ========================================================= */
 
 section{
 
-max-width:1100px;
-margin:auto;
+    max-width:1180px;
 
-padding:40px;
+    margin:auto;
+
+    padding:70px 25px;
 
 }
 
 
 h2{
 
-font-size:35px;
-border-bottom:2px solid white;
-padding-bottom:10px;
+    margin-top:0;
+
+    font-size:clamp(30px,5vw,46px);
+
+    line-height:1.2;
+
+    text-transform:uppercase;
+
+    border-bottom:3px solid var(--green);
+
+    padding-bottom:14px;
 
 }
 
+
+h3{
+
+    font-size:24px;
+
+    margin-top:5px;
+
+}
+
+
+.section-lead{
+
+    max-width:900px;
+
+    color:#d5d5d5;
+
+    font-size:18px;
+
+}
 
 
 .box{
 
-background:rgba(0,0,0,0.75);
+    background:var(--panel);
 
-padding:25px;
+    padding:30px;
 
-margin:20px 0;
+    margin:25px 0;
 
-border-radius:15px;
+    border-radius:14px;
 
-box-shadow:0 0 15px black;
+    border:1px solid #2b3129;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,0.45);
 
 }
 
 
+.box-green{
+
+    border:2px solid var(--green);
+
+    box-shadow:
+    0 0 20px rgba(182,255,0,0.10),
+    0 15px 40px rgba(0,0,0,0.5);
+
+}
+
+
+/* =========================================================
+   SERWER XBOX
+   ========================================================= */
+
+.server-section{
+
+    max-width:none;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(83,0,0,0.8),
+        rgba(0,0,0,0.95)
+    );
+
+    border-top:1px solid #5b1414;
+
+    border-bottom:1px solid #5b1414;
+
+}
+
+
+.server-inner{
+
+    max-width:1180px;
+
+    margin:auto;
+
+}
+
+
+.server-label{
+
+    display:inline-block;
+
+    padding:7px 16px;
+
+    margin-bottom:10px;
+
+    background:var(--red);
+
+    color:white;
+
+    border-radius:6px;
+
+    font-size:13px;
+
+    font-weight:900;
+
+    letter-spacing:2px;
+
+}
+
+
+.server-name{
+
+    background:#050505;
+
+    color:var(--green);
+
+    border:2px solid var(--green);
+
+    border-radius:12px;
+
+    padding:22px;
+
+    margin:20px 0;
+
+    text-align:center;
+
+    font-size:clamp(18px,4vw,32px);
+
+    font-weight:1000;
+
+    word-break:break-word;
+
+    box-shadow:
+    0 0 25px rgba(182,255,0,0.12);
+
+}
+
+
+.server-tags{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+    margin:20px 0;
+
+}
+
+
+.server-tag{
+
+    background:#171717;
+
+    border:1px solid #424242;
+
+    padding:8px 15px;
+
+    border-radius:30px;
+
+    font-weight:bold;
+
+}
+
+
+.copy-button{
+
+    display:block;
+
+    margin:15px auto;
+
+    padding:14px 22px;
+
+    border:0;
+
+    border-radius:8px;
+
+    background:var(--green);
+
+    color:black;
+
+    font-weight:900;
+
+    cursor:pointer;
+
+}
+
+
+.copy-message{
+
+    display:none;
+
+    text-align:center;
+
+    color:var(--green);
+
+    font-weight:bold;
+
+}
+
+
+/* =========================================================
+   INSTRUKCJA
+   ========================================================= */
+
+.steps{
+
+    counter-reset:step;
+
+    padding:0;
+
+    margin:30px 0;
+
+}
+
+
+.step{
+
+    counter-increment:step;
+
+    position:relative;
+
+    margin:17px 0;
+
+    padding:19px 20px 19px 75px;
+
+    background:#111;
+
+    border-left:4px solid var(--green);
+
+    border-radius:8px;
+
+}
+
+
+.step::before{
+
+    content:counter(step);
+
+    position:absolute;
+
+    left:18px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:38px;
+    height:38px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:var(--green);
+
+    color:#000;
+
+    font-weight:1000;
+
+}
+
+
+/* =========================================================
+   NEWS
+   ========================================================= */
+
+.news-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:20px;
+
+    margin-top:30px;
+
+}
+
+
+.news-card{
+
+    padding:25px;
+
+    border-radius:13px;
+
+    background:
+    linear-gradient(
+        145deg,
+        #161916,
+        #0b0c0b
+    );
+
+    border:1px solid #343934;
+
+    transition:0.25s;
+
+}
+
+
+.news-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:var(--green);
+
+}
+
+
+.news-date{
+
+    color:var(--green);
+
+    font-size:13px;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+}
+
+
+.news-card h3{
+
+    margin:7px 0 10px;
+
+}
+
+
+.news-card p{
+
+    color:#c9c9c9;
+
+}
+
+
+.official-link{
+
+    display:inline-block;
+
+    color:var(--green);
+
+    text-decoration:none;
+
+    margin-top:10px;
+
+    font-weight:bold;
+
+}
+
+
+.official-link:hover{
+    text-decoration:underline;
+}
+
+
+/* =========================================================
+   MODY / SKRYPTY
+   ========================================================= */
+
+.mods-section{
+
+    max-width:none;
+
+    background:
+    radial-gradient(
+        circle at center,
+        rgba(182,255,0,0.10),
+        transparent 55%
+    ),
+    #050705;
+
+    border-top:3px solid var(--green);
+
+    border-bottom:3px solid var(--green);
+
+}
+
+
+.mods-inner{
+
+    max-width:1180px;
+
+    margin:auto;
+
+}
+
+
+.mod-title{
+
+    text-align:center;
+
+    font-size:clamp(34px,6vw,65px);
+
+    line-height:1.1;
+
+    color:var(--green);
+
+    text-shadow:
+    0 0 8px rgba(182,255,0,0.7),
+    0 0 25px rgba(182,255,0,0.2);
+
+    border:0;
+
+}
+
+
+.mod-subtitle{
+
+    text-align:center;
+
+    color:var(--yellow);
+
+    font-weight:1000;
+
+    font-size:23px;
+
+}
+
+
+.service-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:18px;
+
+    margin-top:35px;
+
+}
+
+
+.service-card{
+
+    background:#0c0f0c;
+
+    border:1px solid #33402c;
+
+    border-radius:12px;
+
+    padding:25px;
+
+}
+
+
+.service-card h3{
+
+    color:var(--green);
+
+}
+
+
+/* =========================================================
+   MAPY
+   ========================================================= */
 
 .mapy{
 
-display:flex;
-gap:20px;
-flex-wrap:wrap;
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:22px;
 
 }
 
 
 .map{
 
-flex:1;
+    background:
+    linear-gradient(
+        150deg,
+        rgba(27,32,26,0.95),
+        rgba(8,9,8,0.95)
+    );
 
-min-width:250px;
+    padding:27px;
 
-background:rgba(20,20,20,0.9);
+    border-radius:14px;
 
-padding:20px;
-
-border-radius:15px;
+    border:1px solid #343934;
 
 }
 
+
+.map h3{
+
+    color:var(--green);
+
+    letter-spacing:1px;
+
+}
+
+
+/* =========================================================
+   LISTY
+   ========================================================= */
+
+ul{
+
+    padding-left:25px;
+
+}
 
 
 li{
 
-margin:12px;
+    margin:10px 0;
 
 }
 
 
+li::marker{
+
+    color:var(--green);
+
+}
+
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+
+details{
+
+    background:#101210;
+
+    border:1px solid #303630;
+
+    border-radius:10px;
+
+    padding:18px 22px;
+
+    margin:14px 0;
+
+}
+
+
+summary{
+
+    cursor:pointer;
+
+    font-weight:900;
+
+    color:var(--green);
+
+    font-size:18px;
+
+}
+
+
+details p{
+
+    color:#ccc;
+
+}
+
+
+/* =========================================================
+   KONTAKT
+   ========================================================= */
+
+.contact-big{
+
+    text-align:center;
+
+    padding:45px;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(88,101,242,0.16),
+        rgba(0,0,0,0.95)
+    );
+
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
 footer{
 
-background:black;
+    background:#020202;
 
-padding:25px;
+    padding:35px 20px;
 
-text-align:center;
+    text-align:center;
+
+    color:#aaa;
+
+    border-top:1px solid #252525;
 
 }
 
+
+footer strong{
+    color:white;
+}
+
+
+/* =========================================================
+   RESPONSYWNOŚĆ
+   ========================================================= */
+
+@media(max-width:700px){
+
+    header{
+        min-height:570px;
+    }
+
+    nav{
+        padding:10px;
+    }
+
+    nav a{
+        margin:6px;
+        font-size:12px;
+    }
+
+    section{
+        padding:55px 18px;
+    }
+
+    .box{
+        padding:22px;
+    }
+
+    .step{
+        padding-left:68px;
+    }
+
+}
+
+
+/* =========================================================
+   ANIMACJA
+   ========================================================= */
+
+@keyframes pulse{
+
+    0%{
+        box-shadow:0 0 5px rgba(182,255,0,0.2);
+    }
+
+    50%{
+        box-shadow:0 0 25px rgba(182,255,0,0.45);
+    }
+
+    100%{
+        box-shadow:0 0 5px rgba(182,255,0,0.2);
+    }
+
+}
+
+
+.pulse{
+    animation:pulse 2.5s infinite;
+}
 
 </style>
 
@@ -198,10 +1090,39 @@ text-align:center;
 <body>
 
 
+<!-- ========================================================
+     ALERT
+     ======================================================== -->
+
+<div class="top-alert">
+
+🎮 XBOX SERVER:
+BAD LANDS | 24H RAID | PVP | POL/PL
+— SERWER DOSTĘPNY DO TESTOWANIA!
+
+</div>
+
+
+<!-- ========================================================
+     HEADER
+     ======================================================== -->
+
 <header>
 
+<img
+    class="banner"
+    src="images/banner.jpg"
+    alt="DAYZ BADLANDS">
 
-<img class="banner" src="images/banner.jpg">
+
+<div class="header-overlay"></div>
+
+
+<div class="hero">
+
+<div class="logo-small">
+POLSKA SPOŁECZNOŚĆ DAYZ
+</div>
 
 
 <h1>
@@ -209,29 +1130,83 @@ DAYZ BADLANDS
 </h1>
 
 
-<p>
-LIVONIA • CHERNARUS • SAKHAL
+<div class="hero-subtitle">
+
+LIVONIA • CHERNARUS • SAKHAL • BADLANDS
+
+</div>
+
+
+<p class="hero-description">
+
+Wiadomości, poradniki, serwery,
+konfiguracja DayZ oraz pomoc dla graczy.
+
+Dołącz do społeczności i przetestuj również
+nasz własny serwer <strong>DayZ na Xbox</strong>.
+
 </p>
 
 
-<a class="discord" href="TUTAJ_WKLEJ_LINK_DISCORD">
-DISCORD SERWERA
+<div class="buttons">
+
+<a
+    class="btn discord"
+    href="TUTAJ_WKLEJ_LINK_DISCORD"
+    target="_blank">
+
+💬 DISCORD
+
 </a>
 
+
+<a
+    class="btn server-button pulse"
+    href="#nasz-serwer">
+
+🎮 NASZ SERWER XBOX
+
+</a>
+
+
+<a
+    class="btn news-button"
+    href="#aktualnosci">
+
+📰 NOWOŚCI DAYZ
+
+</a>
+
+</div>
+
+</div>
 
 </header>
 
 
+<!-- ========================================================
+     MENU
+     ======================================================== -->
 
 <nav>
 
 <a href="#start">START</a>
 
+<a href="#nasz-serwer">SERWER XBOX</a>
+
+<a href="#aktualnosci">NOWOŚCI</a>
+
+<a href="#badlands">BADLANDS</a>
+
 <a href="#mapy">MAPY</a>
 
 <a href="#poradnik">PORADNIK</a>
 
+<a href="#mody">MODY / SKRYPTY</a>
+
 <a href="#serwer">POMOC SERWER</a>
+
+<a href="#faq">FAQ</a>
 
 <a href="#kontakt">KONTAKT</a>
 
@@ -239,38 +1214,509 @@ DISCORD SERWERA
 
 
 
+<!-- ========================================================
+     START
+     ======================================================== -->
 
 <section id="start">
 
 
-<h2>Witaj w DAYZ BADLANDS</h2>
+<h2>
+Witaj w DAYZ BADLANDS
+</h2>
+
+
+<p class="section-lead">
+
+DAYZ BADLANDS to miejsce stworzone dla graczy,
+którzy chcą być na bieżąco ze światem DayZ,
+poznać mechaniki gry, znaleźć pomoc z serwerem
+oraz wspólnie grać na Xbox.
+
+</p>
+
+
+<div class="box box-green">
+
+<h3>
+☣ Wszystko w jednym miejscu
+</h3>
+
+
+<p>
+
+Na stronie znajdziesz informacje dotyczące
+<strong>Chernarus</strong>,
+<strong>Livonii</strong>,
+<strong>Sakhal</strong>,
+nadchodzącego rozszerzenia
+<strong>DayZ Badlands</strong>,
+aktualizacji gry oraz naszej społeczności.
+
+</p>
+
+
+<ul>
+
+<li>Aktualności ze świata DayZ</li>
+
+<li>Informacje o nowych aktualizacjach</li>
+
+<li>Informacje dotyczące DayZ Badlands</li>
+
+<li>Poradnik dla początkujących</li>
+
+<li>Pomoc z serwerami DayZ</li>
+
+<li>Konfiguracja loot'u i ekonomii</li>
+
+<li>Pomoc z XML</li>
+
+<li>Pomoc z modami i skryptami na PC</li>
+
+<li>Konfiguracja serwerów konsolowych</li>
+
+<li>Własny serwer Xbox do przetestowania</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================================================
+     NASZ SERWER
+     ======================================================== -->
+
+<section
+    id="nasz-serwer"
+    class="server-section">
+
+
+<div class="server-inner">
+
+
+<div class="server-label">
+NASZ SERWER DAYZ
+</div>
+
+
+<h2>
+🎮 ZAGRAJ NA NASZYM SERWERZE XBOX
+</h2>
+
+
+<p class="section-lead">
+
+Chcesz sprawdzić serwer DAYZ BADLANDS?
+Możesz wejść i przetestować nasz serwer społecznościowy.
+
+</p>
+
+
+<div
+    class="server-name pulse"
+    id="serverName">
+
+BAD LANDS | 24H RAID | PVP | POL/PL
+
+</div>
+
+
+<div class="server-tags">
+
+<div class="server-tag">🎮 XBOX</div>
+
+<div class="server-tag">⚔ PVP</div>
+
+<div class="server-tag">💥 24H RAID</div>
+
+<div class="server-tag">🇵🇱 POL / PL</div>
+
+<div class="server-tag">☣ DAYZ</div>
+
+</div>
+
+
+<button
+    class="copy-button"
+    onclick="copyServerName()">
+
+📋 KOPIUJ NAZWĘ SERWERA
+
+</button>
+
+
+<div
+    class="copy-message"
+    id="copyMessage">
+
+✓ Nazwa serwera została skopiowana!
+
+</div>
+
 
 
 <div class="box">
 
-<p>
+<h3>
+Jak wejść na serwer na Xbox?
+</h3>
 
-Witaj na stronie społeczności DayZ BADLANDS.
 
-Znajdziesz tutaj informacje dla nowych graczy,
-poradniki survivalowe, pomoc dotyczącą serwera
-oraz najważniejsze informacje o mapach.
+<div class="steps">
+
+
+<div class="step">
+
+Uruchom
+<strong>DayZ na Xbox</strong>.
+
+</div>
+
+
+<div class="step">
+
+W menu głównym wybierz
+<strong>GRAJ / PLAY</strong>.
+
+</div>
+
+
+<div class="step">
+
+Przejdź do zakładki
+<strong>COMMUNITY / SPOŁECZNOŚĆ</strong>.
+
+</div>
+
+
+<div class="step">
+
+Otwórz wyszukiwarkę serwerów.
+
+</div>
+
+
+<div class="step">
+
+Wpisz:
+
+<strong>
+BAD LANDS
+</strong>
+
+</div>
+
+
+<div class="step">
+
+Znajdź pełną nazwę:
+
+<strong>
+BAD LANDS | 24H RAID | PVP | POL/PL
+</strong>
+
+</div>
+
+
+<div class="step">
+
+Wejdź na serwer i rozpocznij grę.
+
+</div>
+
+
+<div class="step">
+
+Jeśli serwer Ci odpowiada,
+dodaj go do
+<strong>ULUBIONYCH</strong>,
+żeby później łatwiej go znaleźć.
+
+</div>
+
+
+</div>
+
+
+<p class="small">
+
+Jeżeli serwer nie pojawi się od razu,
+odśwież listę serwerów i wyszukaj ponownie
+po krótszej frazie <strong>BAD LANDS</strong>.
 
 </p>
 
 </div>
 
 
+</div>
+
 </section>
 
 
 
+<!-- ========================================================
+     AKTUALNOŚCI
+     ======================================================== -->
 
+<section id="aktualnosci">
+
+
+<h2>
+📰 Aktualności DayZ
+</h2>
+
+
+<p class="section-lead">
+
+Najważniejsze informacje ze świata DayZ.
+Sekcja przygotowana na podstawie oficjalnych
+komunikatów twórców gry.
+
+</p>
+
+
+<div class="news-grid">
+
+
+<div class="news-card">
+
+<div class="news-date">
+16 WRZEŚNIA 2026
+</div>
+
+<h3>
+DayZ 1.30 Experimental
+</h3>
+
+<p>
+
+Eksperymentalna wersja aktualizacji
+<strong>1.30</strong>
+została uruchomiona na Steam.
+
+Jest to kolejny etap rozwoju DayZ
+i przygotowań do następnych zmian
+w grze.
+
+</p>
+
+<a
+    class="official-link"
+    href="https://dayz.com/"
+    target="_blank">
+
+OFICJALNA STRONA DAYZ →
+
+</a>
+
+</div>
+
+
+
+<div class="news-card">
+
+<div class="news-date">
+2026
+</div>
+
+<h3>
+DayZ Badlands
+</h3>
+
+<p>
+
+Nowe rozszerzenie
+<strong>DayZ Badlands</strong>
+zostało zapowiedziane na rok 2026.
+
+Nowym terenem będzie
+<strong>Nasdara Province</strong>
+— ogromny, suchy i znacznie bardziej
+pustynny region.
+
+</p>
+
+</div>
+
+
+
+<div class="news-card">
+
+<div class="news-date">
+ROAD TO BADLANDS
+</div>
+
+<h3>
+Nowa zawartość
+</h3>
+
+<p>
+
+Twórcy stopniowo prezentują elementy
+związane z Badlands.
+
+Wśród zapowiedzianej zawartości
+pojawiły się między innymi nowe
+elementy wyposażenia, obiekty,
+uzbrojenie oraz elementy
+powiązane z Nasdarą.
+
+</p>
+
+</div>
+
+
+
+<div class="news-card">
+
+<div class="news-date">
+XBOX
+</div>
+
+<h3>
+DayZ na Xbox
+</h3>
+
+<p>
+
+DayZ jest rozwijany również
+na platformach Xbox.
+
+Gracze konsolowi mogą korzystać
+z oficjalnych i społecznościowych
+serwerów oraz konfiguracji
+przygotowanych przez administratorów.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="box">
+
+<h3>
+⚠ Ważne
+</h3>
+
+<p>
+
+Daty, zawartość aktualizacji i plany
+rozwoju mogą zostać zmienione przez
+Bohemia Interactive.
+
+Najświeższe informacje zawsze
+sprawdzaj również na oficjalnej stronie DayZ.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================================================
+     BADLANDS
+     ======================================================== -->
+
+<section id="badlands">
+
+
+<h2>
+🔥 DayZ Badlands
+</h2>
+
+
+<div class="box box-green">
+
+
+<h3>
+Nowe rozszerzenie DayZ
+</h3>
+
+
+<p>
+
+<strong>DayZ Badlands</strong>
+to oficjalnie zapowiedziane rozszerzenie
+do DayZ.
+
+Premiera została zapowiedziana
+na <span class="yellow">2026 rok</span>.
+
+</p>
+
+
+<p>
+
+Rozszerzenie ma zabrać graczy do
+<strong>Nasdara Province</strong>.
+
+To teren znacznie różniący się
+od zielonego Chernarus czy
+mroźnego Sakhal.
+
+</p>
+
+
+<ul>
+
+<li>około 267 km² terenu</li>
+
+<li>suchy, wymagający klimat</li>
+
+<li>ograniczony dostęp do wody</li>
+
+<li>nowe lokacje</li>
+
+<li>nowe elementy otoczenia</li>
+
+<li>nowy sprzęt i wyposażenie</li>
+
+<li>nowe wyzwania survivalowe</li>
+
+<li>premiera na PC, Xbox i PlayStation</li>
+
+</ul>
+
+
+<p>
+
+<span class="yellow">
+
+Dokładna data premiery nie powinna być
+podawana, dopóki nie zostanie oficjalnie
+potwierdzona przez twórców.
+
+</span>
+
+</p>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ========================================================
+     MAPY
+     ======================================================== -->
 
 <section id="mapy">
 
 
-<h2>Mapy DayZ</h2>
+<h2>
+🗺 Mapy DayZ
+</h2>
 
 
 <div class="mapy">
@@ -278,200 +1724,820 @@ oraz najważniejsze informacje o mapach.
 
 <div class="map">
 
-<h3>LIVONIA</h3>
-
-<p>
-
-Duża mapa survivalowa.
-Lasy, bunkry, miasta oraz wiele miejsc
-do budowy baz.
-
-</p>
-
-</div>
-
-
-
-<div class="map">
-
-<h3>CHERNARUS</h3>
+<h3>
+🌲 CHERNARUS
+</h3>
 
 <p>
 
 Klasyczny świat DayZ.
 
-Lotniska, miasta, wojskowe lokacje
-oraz walka o przetrwanie.
+Duże miasta, wsie, lasy,
+lotniska wojskowe,
+bazy i ogromna przestrzeń
+do eksploracji.
 
 </p>
 
-</div>
 
+<ul>
+
+<li>klasyczny klimat DayZ</li>
+
+<li>dużo lokacji militarnych</li>
+
+<li>dobre warunki do PVP</li>
+
+<li>wiele miejsc pod bazę</li>
+
+</ul>
+
+</div>
 
 
 
 <div class="map">
 
-<h3>SAKHAL</h3>
+<h3>
+🌳 LIVONIA
+</h3>
 
 <p>
 
-Zimowa mapa wymagająca przygotowania.
-
-Mróz, głód i trudne warunki pogodowe.
+Mapa pełna lasów,
+otwartych terenów i
+niebezpiecznych lokacji.
 
 </p>
 
+
+<ul>
+
+<li>dużo lasów</li>
+
+<li>bunkry</li>
+
+<li>tereny wojskowe</li>
+
+<li>świetna pod survival</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="map">
+
+<h3>
+❄ SAKHAL
+</h3>
+
+<p>
+
+Zimowa mapa,
+na której pogoda sama
+w sobie jest przeciwnikiem.
+
+</p>
+
+
+<ul>
+
+<li>ekstremalne zimno</li>
+
+<li>walka o temperaturę ciała</li>
+
+<li>trudniejsze zdobywanie żywności</li>
+
+<li>zimowy survival</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="map">
+
+<h3>
+☀ BADLANDS
+</h3>
+
+<p>
+
+Nowa generacja survivalu DayZ.
+
+Nasdara ma postawić graczy
+przed problemem wysokiej temperatury,
+suszy i ograniczonych zasobów.
+
+</p>
+
+
+<ul>
+
+<li>Nasdara Province</li>
+
+<li>suchy klimat</li>
+
+<li>nowe lokacje</li>
+
+<li>premiera planowana na 2026</li>
+
+</ul>
+
 </div>
 
 
 </div>
-
 
 </section>
 
 
 
-
-
-
+<!-- ========================================================
+     PORADNIK
+     ======================================================== -->
 
 <section id="poradnik">
 
 
-<h2>Poradnik początkującego</h2>
+<h2>
+☣ Poradnik początkującego
+</h2>
 
 
 <div class="box">
 
 
+<h3>
+Pierwsze minuty decydują o przeżyciu
+</h3>
+
+
 <ul>
 
+<li>
+<strong>Zdobądź nóż</strong>
+— to jedno z podstawowych narzędzi survivalowych.
+</li>
 
-<li>Zdobądź nóż - jest podstawowym narzędziem.</li>
+<li>
+Szukaj jedzenia jeszcze zanim
+Twój poziom energii mocno spadnie.
+</li>
 
+<li>
+Znajdź studnię lub inne
+bezpieczne źródło wody.
+</li>
 
-<li>Szukaj jedzenia i wody na początku gry.</li>
+<li>
+Nie pij brudnej wody bez przygotowania.
+</li>
 
+<li>
+Zbieraj bandaże,
+środki dezynfekujące i leki.
+</li>
 
-<li>Nie strzelaj bez potrzeby - hałas przyciąga uwagę.</li>
+<li>
+Nie strzelaj bez potrzeby.
+Hałas może zdradzić Twoją pozycję.
+</li>
 
+<li>
+Sprawdzaj stan swoich butów.
+Zniszczone obuwie może doprowadzić
+do skaleczeń.
+</li>
 
-<li>Unikaj dużych miast na starcie.</li>
+<li>
+Uważaj na temperaturę ciała.
+Jest szczególnie ważna na Sakhal.
+</li>
 
+<li>
+Naucz się rozpoznawać charakterystyczne
+punkty na mapie.
+</li>
 
-<li>Zbieraj bandaże i środki medyczne.</li>
+<li>
+Nie ufaj każdemu graczowi,
+którego spotkasz.
+</li>
 
+<li>
+Przed wejściem do dużej bazy wojskowej
+obserwuj teren.
+</li>
 
-<li>Naucz się orientacji na mapie.</li>
-
-
-<li>Nie ufaj każdemu napotkanemu graczowi.</li>
-
+<li>
+Zawsze miej przygotowaną
+drogę ucieczki.
+</li>
 
 </ul>
 
 
 </div>
 
+</section>
+
+
+
+<!-- ========================================================
+     MODY / SKRYPTY
+     ======================================================== -->
+
+<section
+    id="mody"
+    class="mods-section">
+
+
+<div class="mods-inner">
+
+
+<h2 class="mod-title">
+
+⚡ POMOC PRZY WGRYWANIU
+MODÓW (SKRYPTÓW) ⚡
+
+</h2>
+
+
+<div class="mod-subtitle">
+
+MASZ PROBLEM Z SERWEREM DAYZ?
+POMOŻEMY CI GO USTAWIĆ!
+
+</div>
+
+
+<div class="service-grid">
+
+
+<div class="service-card">
+
+<h3>
+🧩 MODY
+</h3>
+
+<p>
+
+Pomoc przy instalowaniu,
+konfigurowaniu i rozwiązywaniu
+problemów z modami
+na serwerach obsługujących mody.
+
+</p>
+
+</div>
+
+
+
+<div class="service-card">
+
+<h3>
+💻 SKRYPTY
+</h3>
+
+<p>
+
+Pomoc z konfiguracją
+skryptów i dodatków
+serwerowych.
+
+</p>
+
+</div>
+
+
+
+<div class="service-card">
+
+<h3>
+📂 XML
+</h3>
+
+<p>
+
+Pomoc przy plikach:
+
+</p>
+
+<ul>
+
+<li>types.xml</li>
+
+<li>events.xml</li>
+
+<li>cfgeventspawns.xml</li>
+
+<li>cfgspawnabletypes.xml</li>
+
+<li>globals.xml</li>
+
+<li>economy.xml</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="service-card">
+
+<h3>
+🎁 LOOT
+</h3>
+
+<p>
+
+Konfiguracja ekonomii serwera,
+ilości przedmiotów,
+miejsc ich występowania
+oraz częstotliwości spawnu.
+
+</p>
+
+</div>
+
+
+
+<div class="service-card">
+
+<h3>
+🚗 SPAWNY
+</h3>
+
+<p>
+
+Pomoc z ustawianiem
+pojazdów, eventów,
+przedmiotów oraz innych
+elementów serwera.
+
+</p>
+
+</div>
+
+
+
+<div class="service-card">
+
+<h3>
+🛡 ADMINISTRACJA
+</h3>
+
+<p>
+
+Pomoc przy podstawowej
+administracji i konfiguracji
+serwera DayZ.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+
+<div class="box box-green">
+
+<h3>
+🎮 WAŻNE DLA GRACZY XBOX
+</h3>
+
+<p>
+
+Na Xbox możliwości modyfikowania DayZ
+różnią się od wersji PC.
+
+</p>
+
+<p>
+
+<span class="yellow">
+
+Na konsoli nie instaluje się zwykłych
+modów z Steam Workshop tak jak na PC.
+
+</span>
+
+</p>
+
+<p>
+
+Można jednak zmieniać wiele elementów
+serwera poprzez jego konfigurację,
+w tym między innymi:
+
+</p>
+
+
+<ul>
+
+<li>loot</li>
+
+<li>ekonomię</li>
+
+<li>spawny przedmiotów</li>
+
+<li>pojazdy</li>
+
+<li>eventy</li>
+
+<li>zwierzęta</li>
+
+<li>zombie</li>
+
+<li>lokacje wybranych obiektów</li>
+
+<li>ustawienia serwera</li>
+
+<li>pliki XML</li>
+
+</ul>
+
+
+<p>
+
+Jeżeli nie wiesz co jest możliwe
+na Twojej platformie —
+napisz do nas na Discordzie.
+
+</p>
+
+</div>
+
+
+<div class="center">
+
+<a
+    class="btn discord"
+    href="TUTAJ_WKLEJ_LINK_DISCORD"
+    target="_blank">
+
+💬 POTRZEBUJĘ POMOCY Z SERWEREM
+
+</a>
+
+</div>
+
+
+</div>
 
 </section>
 
 
 
-
-
+<!-- ========================================================
+     POMOC SERWER
+     ======================================================== -->
 
 <section id="serwer">
 
 
-<h2>Pomoc przy serwerze</h2>
+<h2>
+🛠 Pomoc przy serwerze DayZ
+</h2>
+
+
+<p class="section-lead">
+
+Tworzysz własny serwer?
+Masz błąd po zmianie konfiguracji?
+Loot się nie pojawia?
+Event nie działa?
+
+Możemy pomóc znaleźć problem.
+
+</p>
 
 
 <div class="box">
 
 
-<h3>Problemy techniczne?</h3>
-
-
-<p>
-
-Pomagamy z:
-
-</p>
+<h3>
+Pomagamy między innymi z:
+</h3>
 
 
 <ul>
 
-<li>Instalacją modów</li>
+<li>instalacją i konfiguracją serwera</li>
 
-<li>Konfiguracją serwera DayZ</li>
+<li>ustawieniami serwera</li>
 
-<li>Pluginami</li>
+<li>plikami XML</li>
 
-<li>Bazą danych</li>
+<li>konfiguracją ekonomii</li>
 
-<li>Administracją</li>
+<li>lootem</li>
 
-<li>Whitelistą</li>
+<li>spawnami</li>
+
+<li>eventami</li>
+
+<li>pojazdami</li>
+
+<li>zombie</li>
+
+<li>zwierzętami</li>
+
+<li>restartami serwera</li>
+
+<li>whitelistą</li>
+
+<li>administracją</li>
+
+<li>diagnostyką błędów</li>
+
+<li>modami na obsługiwanych platformach</li>
+
+<li>skryptami na obsługiwanych platformach</li>
 
 </ul>
 
 
 </div>
 
+</section>
+
+
+
+<!-- ========================================================
+     FAQ
+     ======================================================== -->
+
+<section id="faq">
+
+
+<h2>
+❓ Najczęstsze pytania
+</h2>
+
+
+<details>
+
+<summary>
+Czy Wasz serwer jest na Xbox?
+</summary>
+
+<p>
+
+Tak.
+
+Nazwa serwera:
+
+<strong>
+BAD LANDS | 24H RAID | PVP | POL/PL
+</strong>
+
+</p>
+
+</details>
+
+
+
+<details>
+
+<summary>
+Jak znaleźć Wasz serwer?
+</summary>
+
+<p>
+
+Wejdź w DayZ → PLAY → COMMUNITY
+i wyszukaj frazę:
+
+<strong>BAD LANDS</strong>.
+
+</p>
+
+</details>
+
+
+
+<details>
+
+<summary>
+Czy mogę wejść i przetestować serwer?
+</summary>
+
+<p>
+
+Tak. Serwer został udostępniony również
+po to, aby gracze mogli go sprawdzić.
+
+</p>
+
+</details>
+
+
+
+<details>
+
+<summary>
+Czy na Xbox można instalować mody?
+</summary>
+
+<p>
+
+Xbox nie obsługuje modów
+z Steam Workshop w taki sposób jak PC.
+
+Administrator może jednak zmieniać
+wiele parametrów serwera,
+ekonomię, loot, eventy,
+spawny oraz konfigurację XML.
+
+</p>
+
+</details>
+
+
+
+<details>
+
+<summary>
+Czy pomagacie z konfiguracją serwerów?
+</summary>
+
+<p>
+
+Tak.
+
+Pomoc może obejmować konfigurację,
+XML, loot, eventy,
+spawny oraz inne ustawienia
+serwera DayZ.
+
+</p>
+
+</details>
+
+
+
+<details>
+
+<summary>
+Gdzie zgłosić problem?
+</summary>
+
+<p>
+
+Najlepiej poprzez nasz Discord.
+
+Przycisk znajdziesz na górze
+oraz na dole strony.
+
+</p>
+
+</details>
+
+
 
 </section>
 
 
 
-
-
+<!-- ========================================================
+     KONTAKT
+     ======================================================== -->
 
 <section id="kontakt">
 
 
-<h2>Kontakt</h2>
+<h2>
+💬 Kontakt
+</h2>
 
 
-<div class="box">
+<div class="box contact-big">
+
+
+<h3>
+DAYZ BADLANDS COMMUNITY
+</h3>
 
 
 <p>
 
-Discord:
+Masz pytanie?
 
-<br><br>
+Potrzebujesz pomocy z serwerem?
 
-TUTAJ_WKLEJ_LINK_DISCORD
+Chcesz zagrać razem z nami?
+
+A może chcesz przetestować
+nasz serwer Xbox?
 
 </p>
 
 
+<br>
+
+
+<a
+    class="btn discord"
+    href="TUTAJ_WKLEJ_LINK_DISCORD"
+    target="_blank">
+
+💬 DOŁĄCZ DO DISCORDA
+
+</a>
+
+
+<br><br>
+
+
+<p>
+
+<strong>
+SERWER XBOX
+</strong>
+
+</p>
+
+
+<div class="server-name">
+
+BAD LANDS | 24H RAID | PVP | POL/PL
+
 </div>
 
+
+</div>
 
 </section>
 
 
 
-
-
+<!-- ========================================================
+     FOOTER
+     ======================================================== -->
 
 <footer>
 
 
+<strong>
 DAYZ BADLANDS © 2026
+</strong>
 
 <br>
 
-Survival • Community • Servers
+Survival • Community • Xbox • PVP • Servers
 
+<br><br>
+
+<span class="small">
+
+DAYZ BADLANDS jest stroną społecznościową.
+DayZ i związane z nim znaki należą do
+ich odpowiednich właścicieli.
+
+</span>
 
 </footer>
 
 
 
+<!-- ========================================================
+     JAVASCRIPT
+     ======================================================== -->
+
+<script>
+
+function copyServerName(){
+
+    const serverName =
+    "BAD LANDS | 24H RAID | PVP | POL/PL";
+
+    navigator.clipboard.writeText(serverName)
+    .then(function(){
+
+        const message =
+        document.getElementById("copyMessage");
+
+        message.style.display = "block";
+
+        setTimeout(function(){
+
+            message.style.display = "none";
+
+        },3000);
+
+    });
+
+}
+
+</script>
+
+
 </body>
 </html>
-<!--UBDATE--->
